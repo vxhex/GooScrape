@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+
+	"name": "GooChrome Scraper",
+	"description": "This extension scrapes links from Google search result pages.",
+	"version": "0.1",
+  
+	"permissions": [
+		"https://www.google.com/"
+	],
+  
+	"background":{
+		"scripts":["background.js"],
+		"persistent": false
+	},
+  
+	"content_scripts": [{
+		"matches": ["https://www.google.com/*"],
+		"js": ["jquery.js", "scraper.js"]
+	}],
+  
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "menu.html"
+	}
+}
